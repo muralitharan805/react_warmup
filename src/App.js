@@ -7,10 +7,11 @@ class NameFrom extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      value:''
+      value:'',textAreaValue:''
     }
     this.handleOnSubmit=this.handleOnSubmit.bind(this)
     this.handleOnchange=this.handleOnchange.bind(this)
+    this.handleOnchange_textArea=this.handleOnchange_textArea.bind(this)
   }
 
   handleOnchange(event){
@@ -19,6 +20,14 @@ class NameFrom extends React.Component{
     })
 
     console.log(this.state.value);
+  }
+
+  handleOnchange_textArea(event){
+    this.setState({
+      textAreaValue:event.target.value
+    })
+
+    console.log(this.state.textAreaValue);
   }
   handleOnSubmit(event){
     
@@ -34,6 +43,10 @@ class NameFrom extends React.Component{
           <input type='text' value={this.state.value} onChange={this.handleOnchange} ></input>
           <input type='submit' value='submit' ></input>
         </label>
+        <br/>
+        <textarea value={this.state.textAreaValue} onChange={this.handleOnchange_textArea}>
+
+        </textarea>
         </form>
       </div>
     )
