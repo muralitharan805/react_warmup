@@ -3,7 +3,7 @@ import Greeting from './Greeting'
 function App() {
   return (
     <div className="App">
-      <Greeting ></Greeting>
+      <Greeting name="murali"></Greeting>
     </div>
   );
 }
