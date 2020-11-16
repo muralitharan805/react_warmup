@@ -7,11 +7,12 @@ class NameFrom extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      value:'',textAreaValue:''
+      value:'',textAreaValue:'',selectItem:''
     }
     this.handleOnSubmit=this.handleOnSubmit.bind(this)
     this.handleOnchange=this.handleOnchange.bind(this)
     this.handleOnchange_textArea=this.handleOnchange_textArea.bind(this)
+    this.handleOnchange_SelectItem=this.handleOnchange_SelectItem.bind(this)
   }
 
   handleOnchange(event){
@@ -28,6 +29,14 @@ class NameFrom extends React.Component{
     })
 
     console.log(this.state.textAreaValue);
+  }
+
+  handleOnchange_SelectItem(event){
+    this.setState({
+      selectItem:event.target.value
+    })
+
+    console.log(this.state.selectItem);
   }
   handleOnSubmit(event){
     
@@ -47,6 +56,13 @@ class NameFrom extends React.Component{
         <textarea value={this.state.textAreaValue} onChange={this.handleOnchange_textArea}>
 
         </textarea>
+        <br/>
+        <select value={this.state.selectItem} onChange={this.handleOnchange_SelectItem}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+        </select>
         </form>
       </div>
     )
