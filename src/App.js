@@ -5,7 +5,6 @@ class Time extends React.Component{
     return(
       <div>
     <h1>Welcome</h1>
-    <h1>it {new Date().toLocaleTimeString()}</h1>
       </div>
   
     )
