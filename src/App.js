@@ -49,6 +49,23 @@ function List_Example_Extract(props){
    
   )
 }
+
+
+// Embedding map() in JSX
+// Sometimes this results in clearer code, but this style can also be abused. Like in JavaScript, it is up to you to decide whether it is worth extracting a variable for readability. Keep in mind that if the map() body is too nested, it might be a good time to extract a component.
+function Emberdding(props) {
+  const number = props.list
+  return (
+    <ul>
+      {
+        number.map((item)=>(
+          <List key={item.toString() } value={item}></List>)
+        )
+      }
+    </ul>
+  )
+  
+}
 function App() {
   const numbers = [1, 2, 3, 4, 5];
 
@@ -56,6 +73,7 @@ function App() {
     <div className="App">
       <List_Example list={numbers}></List_Example>
       <List_Example_Extract list={numbers}></List_Example_Extract>
+      <Emberdding list={numbers}></Emberdding>
     </div>
   );
 }
