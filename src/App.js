@@ -7,14 +7,24 @@ class NameFrom extends React.Component{
   constructor(props){
     super(props)
     this.state ={
-      value:'',textAreaValue:'',selectItem:''
+      value:'',textAreaValue:'',selectItem:'',multipleText:'',multipleTextArea:''
     }
     this.handleOnSubmit=this.handleOnSubmit.bind(this)
     this.handleOnchange=this.handleOnchange.bind(this)
     this.handleOnchange_textArea=this.handleOnchange_textArea.bind(this)
     this.handleOnchange_SelectItem=this.handleOnchange_SelectItem.bind(this)
+    this.handleOnchangeMultiple=this.handleOnchangeMultiple.bind(this)
   }
 
+  handleOnchangeMultiple(event){
+    this.setState({
+      [event.target.name]:event.target.value
+
+      
+    })
+
+    console.log(`this is handle multiple inputs in single control component ${this.state.multipleText} && ${this.state.multipleTextArea}`);
+  }
   handleOnchange(event){
     this.setState({
       value:event.target.value
@@ -50,10 +60,14 @@ class NameFrom extends React.Component{
         <label>
           Name: 
           <input type='text' value={this.state.value} onChange={this.handleOnchange} ></input>
+          <input type='text' name='multipleText' value={this.state.multipleText} onChange={this.handleOnchangeMultiple} ></input>
           <input type='submit' value='submit' ></input>
         </label>
         <br/>
         <textarea value={this.state.textAreaValue} onChange={this.handleOnchange_textArea}>
+
+        </textarea>
+        <textarea name='multipleTextArea' value={this.state.multipleTextArea} onChange={this.handleOnchangeMultiple}>
 
         </textarea>
         <br/>
