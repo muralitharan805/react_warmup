@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Row from './Row'
 
 
@@ -8,9 +8,17 @@ export default function Greeting(props){
   function handleOnchange(e){
     setName(e.target.value)
   }
+
   function handleOnSurnamechange(e){
     setsurName(e.target.value)
   }
+
+  useEffect(
+    ()=>{
+    document.title=name+' '+surname
+
+    }
+  )
   return (
           <section>
             <div>
