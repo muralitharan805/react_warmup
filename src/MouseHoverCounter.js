@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Try1 extends Component {
+export class MouseHoverCounter extends Component {
   constructor(props)
   {
     super(props)
@@ -17,11 +17,10 @@ export class Try1 extends Component {
   render() {
     return (
       <div>
-        <h1>This click count {this.state.count}</h1>
-        <button onClick={this.handleOnClick}>Click</button>
+        <h1 onMouseOver={this.handleOnClick}>This click count {this.state.count}</h1>
       </div>
     )
   }
 }
 
-export default Try1
+export default MouseHoverCounter
