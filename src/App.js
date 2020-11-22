@@ -1,9 +1,10 @@
 import './App.css';
-
+import Greeting from './Greeting'
 function App() {
   return (
     <div className="App">
-      <h1>this is basic setup</h1>
+
+    <Greeting ></Greeting>
     </div>
   );
 }
