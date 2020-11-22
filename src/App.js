@@ -11,7 +11,7 @@ class App extends React.Component {
       <div className="App">
       <h1>this is React Hight order</h1>
 
-      <ClickCounter></ClickCounter>
+      <ClickCounter name="Murali"></ClickCounter>
       <HoverCounter></HoverCounter>
     </div>
   );
