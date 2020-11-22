@@ -23,6 +23,29 @@ export class LifecycleB extends Component {
     console.log("LifecycleB componentDidMount" );
 
   }
+
+  shouldComponentUpdate(){
+    console.log("LifecycleB shouldComponentUpdate" );
+    return true
+
+  }
+
+
+  getSnapshotBeforeUpdate(preProps,preState){
+    console.log("LifecycleB getSnapshotBeforeUpdate" );
+    return null
+  }
+
+  componentDidUpdate(preProps,preState,snapShot){
+    console.log("LifecycleB componentDidUpdate" );
+
+  }
+
+  handleOnclick(){
+    this.setState({
+      name:"change"
+    })
+  }
   render() {
     console.log("LifecycleB render" );
 

@@ -12,6 +12,7 @@ export class LifecycleA extends Component {
     this.state={
       name:"murali"
     }
+    this.handleOnclick=this.handleOnclick.bind(this)
   }
 
   static getDerivedStateFromProps(props,state){
@@ -23,9 +24,28 @@ export class LifecycleA extends Component {
     console.log("LifecycleA componentDidMount" );
 
   }
+  shouldComponentUpdate(){
+    console.log("LifecycleA shouldComponentUpdate" );
+    return true
+
+  }
+
+  getSnapshotBeforeUpdate(preProps,preState){
+    console.log("LifecycleA getSnapshotBeforeUpdate" );
+    return null
+  }
 
 
+  componentDidUpdate(preProps,preState,snapShot){
+    console.log("LifecycleA componentDidUpdate" );
 
+  }
+
+  handleOnclick(){
+    this.setState({
+      name:"change"
+    })
+  }
   render() {
     console.log("LifecycleA render" );
 
@@ -33,6 +53,7 @@ export class LifecycleA extends Component {
     return (
       <div>
         LifecycleA
+        <button onClick={this.handleOnclick}>Click</button>
         <LifecyleB></LifecyleB>
       </div>
     )
