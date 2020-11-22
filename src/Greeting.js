@@ -8,7 +8,11 @@ import React from 'react'
 class Greeting extends React.Component {
   render() {
     return (
-      <h1>Hello, {true}</h1>
+      <div>
+
+      <h1>Hello, {this.props.name}</h1>
+      <h1>Hello,{this.props.city}</h1>
+      </div>
     );
   }
 }
@@ -18,5 +22,9 @@ export default Greeting
 
 Greeting.propTypes = {
 
-  name: PropTypes.number.isRequired
+  name: PropTypes.string.isRequired
 };
+
+Greeting.defaultProps={
+  city:'tub'
+}
