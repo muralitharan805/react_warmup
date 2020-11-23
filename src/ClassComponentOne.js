@@ -19,7 +19,7 @@ export default class ClassComponentOne extends Component {
   }
 
   componentDidUpdate(preProps,preState){
-    document.title=`Click ${this.state.count} time`
+    document.title=`Click ${this.state.count} time class`
 
   }
   
