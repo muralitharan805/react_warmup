@@ -13,7 +13,11 @@ function HooksMouse() {
   useEffect(() => {
     console.log('useEffect Call');
     window.addEventListener('mousemove',handleMouseMove)
-     
+     return ()=>{
+      console.log('useEffect remove');
+      window.removeEventListener('mousemove',handleMouseMove)
+      
+     }
   },[])
   return (
     <div>

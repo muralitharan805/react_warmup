@@ -3,6 +3,7 @@ import ClassComponentOne from './ClassComponentOne';
 import ClassMouse from './ClassMouse';
 import HooksCounter1 from './HooksCounter1';
 import HooksMouse from './HooksMouse';
+import MouseContainer from './MouseContainer';
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <ClassComponentOne></ClassComponentOne>
       <HooksCounter1></HooksCounter1>
       {/* <ClassMouse></ClassMouse> */}
-      <HooksMouse></HooksMouse>
-    </div>
+      <MouseContainer></MouseContainer>
+     </div>
   );
 }
 
