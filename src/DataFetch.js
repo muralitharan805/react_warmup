@@ -3,8 +3,12 @@ import axios from 'axios'
 function DataFetch() {
   const [post,setPost]= useState({})
   const [id,setId]=useState(1)
+  const [buttonclick,setNuttonclick]=useState(1)
+  const handleOnclick =()=>{
+    setNuttonclick(id)
+  }
   useEffect(()=>{
-    axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`).then(
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${buttonclick}`).then(
       res=>{
         console.log(res);
         setPost(res.data)
@@ -12,10 +16,11 @@ function DataFetch() {
     ).catch(error=>{
       console.log(error);
     })
-  },[id])
+  },[buttonclick])
   return (
     <div>
       <input type="text" value={id} onChange={(e)=>{setId(e.target.value)}}></input>
+      <button onClick={handleOnclick}>Click</button>
       <div>
         {post.title}
       </div>
