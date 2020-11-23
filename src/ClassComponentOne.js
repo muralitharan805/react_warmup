@@ -4,7 +4,7 @@ export default class ClassComponentOne extends Component {
   constructor(props) {
     super(props);
     this.state={
-      count:0
+      count:0,name:''
     }
   }
 
@@ -19,7 +19,13 @@ export default class ClassComponentOne extends Component {
   }
 
   componentDidUpdate(preProps,preState){
-    document.title=`Click ${this.state.count} time class`
+    console.log("name");
+
+    if(preState.count!==this.state.count){
+      
+      console.log("Updated");
+      document.title=`Click ${this.state.count} time class`
+    }
 
   }
   
@@ -27,6 +33,14 @@ export default class ClassComponentOne extends Component {
   render() {
     return (
       <div>
+        <input type='text' 
+        value={this.state.name}
+        onChange={(e)=>
+          {
+            this.setState({
+              name:e.target.value
+            })
+          }}></input>
         <button onClick={this.handleOnCount}>Click {this.state.count}</button>
       </div>
     )
