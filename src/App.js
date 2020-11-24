@@ -1,11 +1,11 @@
 import './App.css';
-import Datafe1 from './Datafe1';
+import Counter from './Counter';
 
 function App() {
   return (
     <div className="App">
-      <h1>this is fetch with reducer</h1>
-      <Datafe1></Datafe1>
+      <h1>this is hooks memo</h1>
+      <Counter></Counter>
     </div>
   );
 }
